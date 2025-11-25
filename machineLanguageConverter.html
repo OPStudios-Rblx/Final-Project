@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./machineLanguageConverter.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>Machine Language Instructions Converter</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div> 
+
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+         <div class="instruction-container">
+            <div class="instruction-button">
+                <p>18C3</p>
+            </div>
+            <div class="instruction-button">
+                <p>34M3</p>
+            </div>
+            <div class="instruction-button">
+                <p>5272</p>
+            </div>
+            <div class="instruction-button">
+                <p>Clear</p>
+            </div>
+            <p class="instruction">Instruction: </p>
+         </div>
+            <img src="Appendix_ML.png" class="appendix">
+        </div>
+    </div> 
+    <script>
+        const appendix = document.querySelector(".appendix");
+        const instruction = document.querySelector(".instruction");
+        const iButtons = document.querySelectorAll(".instruction-button");
+
+        iButtons.forEach(setupButtons);
+
+        function setupButtons(button,i) {
+            if (button) {
+                button.addEventListener("click", function(){
+                   if (i === 0) {
+                    appendix.src = "LOAD_ML.png";
+                    base = instruction.innerHTML;
+                    instruction.innerHTML = base + "Load register 8 with bit pattern found at address C3.";
+                   } else if (i === 1) {
+                    appendix.src = "STORE_ML.png";
+                    instruction.innerHTML = base + "Store register 4 with bit pattern found at address M3.";
+                   } else if (i === 2) {
+                    appendix.src = "ADD_ML.png";
+                    instruction.innerHTML = base + "Add the contents of registers 2 and 7 in 2's complement and leave the result in register 2.";
+                   }else{
+                    appendix.src = "Appendix_ML.png";
+                    instruction.innerHTML = base;                    
+                   }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./andStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>AND Gate</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div>
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+            
+            <div class="wire-row">
+                <div class="column">
+                    <div class="box input">
+                        <div class="input-button-bg">
+                            <button class="input-button"></button>
+                            <p>OFF</p>
+                        </div>
+                    </div>   
+               
+
+                    <div class="box input">
+                        <div class="input-button-bg">
+                            <button class="input-button"></button>
+                            <p>OFF</p>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="wire-column">
+                    <div class="wire wire-1"></div>
+                    <div class="wire wire-2"></div>
+                </div>
+
+                <div class="box gate">
+                    <img src="AND.png" class="gate-icon">
+                    <p>AND Gate</p>
+                </div>
+
+                <div class="wire"></div>
+
+                <div class="box output">
+                    <p>OUTPUT</p>
+                </div>   
+               
+            </div>                 
+            
+        </div>
+        <script>
+            const andButtons = document.querySelectorAll(".input-button");
+            const andGate = document.querySelector(".gate");
+            const output = document.querySelector(".output");
+            const wires = document.querySelectorAll(".wire");
+
+            andButtons.forEach(setupButton);
+
+            function setupButton(button) {
+                button.addEventListener("click", function () {
+                    const bg = button.parentElement;
+                    const container = bg.parentElement;
+                    const text = bg.querySelector("p");
+                 
+                    button.classList.toggle("active");
+                    bg.classList.toggle("active");
+                    container.classList.toggle("active");
+                    if (text) {
+                        text.classList.toggle("active");
+                        const isActive = text.classList.contains("active");
+                        text.textContent = isActive ? "ON" : "OFF";
+                    }
+                    button.value = button.classList.contains("active") ? 1 : 0;
+                    updateCircuit();
+                });
+            }
+
+            function updateCircuit() {
+                const A = andButtons[0].value;
+                const B = andButtons[1].value;
+                
+                const wire1 = wires[0];
+                const wire2 = wires[1];
+                const wire3 = wires[2];
+
+                const activate = A & B;
+
+                if (A == 1) {
+                    wire1.classList.add("active");
+                }else{
+                    wire1.classList.remove("active");
+                }
+
+                if (B == 1) wire2.classList.add("active");
+                else wire2.classList.remove("active");
+
+                if (activate){
+                    wire3.classList.add("active");
+                    andGate.classList.add("active");
+                    output.classList.add("active");
+
+                }else{
+                    wire3.classList.remove("active");
+                    andGate.classList.remove("active");
+                    output.classList.remove("active");
+                }
+            }
+           
+
+         </script>
+    </div> 
+</body>
+</html>
+

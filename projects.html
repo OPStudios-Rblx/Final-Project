@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./projectsStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>Projects</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div> 
+        <div class="project-container">
+            <p class="project-button"> Project 1: NOT Gate</p>
+            <p class="project-button"> Project 2: AND Gate</p>
+            <p class="project-button"> Project 3: Binary To Hexidecimal Converter</p>
+            <p class="project-button"> Project 4(A): ASCII Converter</p>
+            <p class="project-button"> Project 4(B): UNICODE Converter</p>
+            <p class="project-button"> Project 5:  Machine Language Instructions Converter</p>
+        </div>
+    </div> 
+    <script>
+        const projButton = document.querySelectorAll(".project-button");
+        projButton.forEach(setupButton);
+
+        function setupButton(button,i) {
+            if (button) {
+                button.addEventListener("click", function(){
+                    toWebPage(i);
+                });
+            };
+        };
+
+        function toWebPage(i) {
+            if (i === 0) {
+                window.location.href = "notGate.html";
+            } else if (i === 1) {
+                window.location.href = "andGate.html";
+            } else if (i === 2) {
+                window.location.href = "binaryToHex.html";
+            } else if (i === 3) {
+                window.location.href = "asciiTable.html";
+            } else if (i === 4) {
+                window.location.href = "unicodeConverter.html";
+            } else if (i === 5) {
+                window.location.href = "machineLanguageConverter.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

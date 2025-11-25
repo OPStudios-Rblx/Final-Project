@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./binaryToHex.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>Binary To Hexidecimal Converter</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div> 
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+            <img src="binaryToHex.png" class="chart">
+
+            <div class="converter-container">
+                <p> Enter Any Four Digit Binary Number</p>
+                <input type="number" class="input" value="">
+                <div class="confirm-button">
+                    <p>Confirm</p>
+                </div>
+
+                <div class="answer">
+                    <p>HEX Value: </p>
+                    <p class="answer-value"> </p>
+                </div>
+                
+            </div>          
+        </div>
+    </div> 
+    <script>
+        const confirmButton = document.querySelector(".confirm-button");        
+         
+        function binaryToHex(){
+            var input = document.querySelector("input").value;
+            var hex = parseInt(input, 2).toString(16).toUpperCase();
+            var answer = document.querySelector(".answer-value");
+            answer.innerHTML = hex;
+        }
+        
+        confirmButton.addEventListener("click", function(){
+            binaryToHex();
+        });
+    </script>
+</body>
+
+</html>

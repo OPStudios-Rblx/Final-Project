@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./asciiTable.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>ASCII Converter</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div> 
+
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+        
+            <img src="asciiTable.png" class="table">
+
+            <div class="converter-container">
+                <p> Enter A Number (0-127)</p>
+                <input type="number" class="input" value="">
+
+                <div class="confirm-button">
+                    <p>Confirm</p>
+                </div>
+
+                <div class="answer">
+                    <p>ASCII: </p>
+                    <p class="ascii-value"> </p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        const confirmButton = document.querySelector(".confirm-button");        
+         
+        function asciiConverter(){
+            var input = document.querySelector("input").value;
+            var ascii = String.fromCharCode(input);
+            var answer = document.querySelector(".ascii-value");
+            answer.innerHTML = ascii;
+        }
+        
+        confirmButton.addEventListener("click", function(){
+            asciiConverter();
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./binaryToHex.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>UNICODE Converter</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div> 
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+            <img src="unicodeEmojis.png" class="chart">
+
+            <div class="converter-container">
+                <p> Enter UNICODE Number</p>
+                <input type="text" class="input" value="">
+                <div class="confirm-button">
+                    <p>Confirm</p>
+                </div>
+
+                <div class="answer">
+                    <p>Unicode: </p>
+                    <p class="answer-value"> </p>
+                </div>
+                
+            </div>          
+        </div>
+    </div> 
+    <script>
+        const confirmButton = document.querySelector(".confirm-button");        
+         
+        function unicodeConverter(){
+            var input = document.querySelector("input").value;
+            var unicode = "&#x" + input + ";";
+            var answer = document.querySelector(".answer-value");
+            answer.innerHTML = unicode;
+        }
+        
+        confirmButton.addEventListener("click", function(){
+            unicodeConverter();
+        });
+    </script>
+</body>
+
+</html>

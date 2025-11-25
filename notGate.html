@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./notStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>NOT Gate</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div>
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+            <div class="wire-row">
+                <div class="box input">
+                    <div class="input-button-bg">
+                        <button class="input-button"></button>
+                        <p>OFF</p>
+                    </div>   
+                </div>
+                
+                <div class="wire"></div>
+                                                        
+                <div class="box gate">
+                    <img src="NOT.png" class="gate-icon">
+                    <p>NOT Gate</p>
+                </div>
+
+                <div class="wire"></div>
+
+                <div class="box output">
+                    <p>OUTPUT</p>
+                </div>                 
+            </div>
+        </div>
+        <script>
+            const input = document.querySelector(".input")
+            const bg = document.querySelector(".input-button-bg");
+            const text = bg.querySelector("p");
+            const button = document.querySelector(".input-button");
+            const wires = document.querySelectorAll(".wire");
+            const output = document.querySelector(".output");
+
+            wires.forEach(handleWires);
+            
+
+            button.addEventListener("click", function(){
+                input.classList.toggle("active");
+                bg.classList.toggle("active");
+                if (text) {
+                    text.classList.toggle("active");
+                    const isActive = text.classList.contains("active");
+                    text.textContent = isActive ? "ON" : "OFF";
+                }
+                button.classList.toggle("active");
+                wires[0].classList.toggle("active");
+                wires.forEach(handleWires);
+            });
+
+           
+
+            function handleWires(wire,i) {
+               if (i === 0 ) {
+                const active = wire.classList.contains("active");
+                const outputWire = wires[1];
+
+                if(active) {
+                    outputWire.classList.remove("active");
+                    output.classList.remove("active");
+                }else{
+                    outputWire.classList.add("active");
+                    output.classList.add("active");
+                    
+                }
+               }
+            };        
+        </script>
+    </div> 
+</body>
+</html>
+
