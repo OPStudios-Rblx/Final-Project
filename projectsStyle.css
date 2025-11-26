@@ -59,7 +59,7 @@
 
 .project-container p {
     margin-left: 25px;
-    font-size: x-large;
+    font-size: large;
 }
 #exit-button {
     width: 90px;
@@ -69,5 +69,6 @@
     right: 0;
     margin: 25px 25px 0px 0px;
 }
+
 
 
