@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./bmi.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>BMI Calculator</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div>
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+            <p> Calculate Your BMI!</p>
+
+            <div class="container">
+                <input type="number" class="height" value = "" placeholder="Enter your height in inches">
+                <input type="number" class="weight" value = "" placeholder="Enter your weight in lbs">
+            </div>            
+
+            <div class="calculate-button">
+                <p>Calculate</p>
+            </div>
+
+            <div class="output-container">
+                <output  type="number" class="result" value = "" ></output>
+                <output  type="text" class="status" value = "" ></output>
+            </div>
+           
+        </div>
+    </div>
+    <script>
+        const calculateButton = document.querySelector(".calculate-button");
+
+        function setupButton(button){
+            button.addEventListener("click", function(){
+                calculateBMI();
+            });
+        }
+
+        function calculateBMI(){
+            const inches = document.querySelector(".height").value;
+            const lbs = document.querySelector(".weight").value;
+            const result = document.querySelector(".result");
+            const status = document.querySelector(".status");
+
+            const bmi = (lbs/inches**2) * 703;
+
+            if (!inches || !lbs || isNaN(inches) || isNaN(lbs)) {
+                result.textContent = "Please enter valid numbers for height and weight.";
+                return;
+            }            
+            
+            if(bmi >= 30){
+                status.value = "Obese";
+            }else if (bmi >= 25){
+                status.value = "Overweight";
+            }else if (bmi >= 18.5){
+                status.value = "Healthy";
+            }else{
+                status.value = "Underweight";
+            }
+        
+            result.value = "Your BMI is: " + bmi.toFixed(1);
+            status.value = status.value;
+        }
+           
+
+       setupButton(calculateButton);
+    </script>
+</body>

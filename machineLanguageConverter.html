@@ -50,7 +50,6 @@
         const appendix = document.querySelector(".appendix");
         const instruction = document.querySelector(".instruction");
         const iButtons = document.querySelectorAll(".instruction-button");
-        const base = instruction.innerHTML;
 
         iButtons.forEach(setupButtons);
 
@@ -59,6 +58,7 @@
                 button.addEventListener("click", function(){
                    if (i === 0) {
                     appendix.src = "LOAD_ML.png";
+                    base = instruction.innerHTML;
                     instruction.innerHTML = base + "Load register 8 with bit pattern found at address C3.";
                    } else if (i === 1) {
                     appendix.src = "STORE_ML.png";
@@ -76,5 +76,4 @@
     </script>
 </body>
 </html>
-
 

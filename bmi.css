@@ -34,12 +34,13 @@
     cursor: pointer;
 }
 
-.project-button {
+.back-button {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 8%;       
+    max-width: 80px; 
     cursor: pointer;
-}
-
-.project-button.enter {
-    color: aqua;
 }
 
 .project-container {
@@ -51,16 +52,59 @@
     max-width: 1250px;         
     min-width: 300px;   
     position: relative;
-    display: flex;        
-    flex-direction: column;   
-    justify-content: center;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-shrink: 0;     
+    gap: 25px;
 }
 
 .project-container p {
-    margin-left: 25px;
-    font-size: 20px;
+    font-size: xx-large;
+}
+
+.container {            
+    width: 100%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.output-container {            
+    width: 100%;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container input{
+    height: 100%;              
+    width: 250px;    
+    font-size: large;
+}
+
+.output-container output{
+    height: 100%;              
+    width: 200px;
+    font-size: xx-large;
+    text-align: center; 
+}
+
+.calculate-button {
+    height: 5%;              
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(173, 215, 230);
+    border: 0.25vw solid black;  
+    cursor: pointer;   
+}
+
+.calculate-button p{
+    font-size: x-large;
 }
 #exit-button {
     width: 90px;
@@ -70,8 +114,5 @@
     right: 0;
     margin: 25px 25px 0px 0px;
 }
-
-
-
 
 

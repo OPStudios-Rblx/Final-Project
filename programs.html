@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FOC</title>
+    <link  href="./programs.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body>
+   <div class="welcome-text"><h1>Programs</h1></div>
+    <div class="underline-bar"></div>
+    <img src="Exit_Off.png" id="exit-button">
+    <div class="main-container">
+        <div class="button-container">
+            <img src="course_Off.png" class= "button">
+            <img src="projects_Off.png" class="button">
+            <img src="concepts_Off.png" class="button">
+            <img src="databases_Off.png" class="button">
+            <img src="documentation_Off.png" class="button">
+            <img src="devTeam_Off.png" class="button">
+            <script src="./menu-buttons-javascript.js"defer></script>
+        </div>
+        <div class="project-container">
+            <img src="projectsBack_Off.png" class="back-button">
+            <script src="./back-button.js"defer></script>
+
+            <p>Calculator </p>
+             <div class="container">
+                <input type="number" class="num1" value = "" >
+                <div class="operation"> 
+                    <p class="box">+</p>
+                    <p class="box">-</p>
+                    <p class="box">x</p>
+                    <p class="box">÷</p>
+                    <p class="box">!</p>
+                    <p class="box">x²</p>
+                    <p class="box">√</p>                    
+                </div>
+                <input type="number" class="num2" value = "" >
+            </div>      
+            
+            <div class="output-container">
+                <output  type="number" class="answer" value = "" ></output>
+            </div>
+
+            <div class="calculate-button">
+                <p>Calculate</p>
+            </div>            
+        </div>
+        <script src="./calculator.js"defer></script>
+  
+    </div>
+</body>
