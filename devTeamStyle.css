@@ -58,3 +58,27 @@ body{
   width: 55%;  
  
 }
+
+
+.container {
+    margin: 25px 0px 0px 325px;
+    background-color: white; 
+    border: 0.5vw solid black; 
+    height: 20vh;              
+    width: 54%;
+    max-width: 1250px;         
+    min-width: 300px;   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; 
+}
+
+.container h2 {
+    margin-left: 25px;
+    text-align: left;
+}
+.container a{
+    margin-left: 25px;
+    text-decoration: none;
+}
