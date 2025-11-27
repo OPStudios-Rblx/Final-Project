@@ -34,6 +34,11 @@ body{
     cursor: pointer;
 }
 
+.image {
+    margin: 25px auto;
+    display: flex;
+}
+
 #exit-button {
     width: 90px;
     position: fixed;
